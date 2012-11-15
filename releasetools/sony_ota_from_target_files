@@ -56,10 +56,6 @@ Usage:  ota_from_target_files [flags] input_target_files output_ota_package
       Enable or disable the execution of backuptool.sh.
       Disabled by default.
 
-<<<<<<< HEAD:releasetools/semc_ota_from_target_files
-=======
-
->>>>>>> 760b114... fix ota script for AOKP:releasetools/sony_ota_from_target_files
   --override_device <device>
       Override device-specific asserts. Can be a comma-separated list.
 
@@ -408,16 +404,11 @@ def WriteFullOTAPackage(input_zip, output_zip):
   #  ts = GetBuildProp("ro.build.date.utc", input_zip)
   #  script.AssertOlderBuild(ts)
 
-<<<<<<< HEAD:releasetools/semc_ota_from_target_files
-  AppendAssertions(script, input_zip)
-  device_specific.FullOTA_Assertions()
-=======
   if not OPTIONS.no_assert:
 	device_specific.FullOTA_Assertions()
 
   device_specific.FullOTA_InstallBegin()
 
->>>>>>> 760b114... fix ota script for AOKP:releasetools/sony_ota_from_target_files
   if OPTIONS.backuptool:
     script.RunBackup("backup")
 
